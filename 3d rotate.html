@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper {
+			width: 200px;
+			height: 200px;
+			padding: 100px;
+			border:1px solid green;
+			margin:50px auto;
+			text-align: center;
+			line-height: 200px;
+			perspective: 600px;
+		}
+		.wrapper .box {
+			transform-origin: 100px 100px -100px;
+			transform-style: preserve-3d;
+			position: relative;
+		}
+		.box:hover {
+			animation: rotate 10s linear infinite running;
+		}
+		.wrapper .box div{
+			width: 200px;
+			height: 200px;
+			border-radius: 50px;
+			position: absolute;
+			left:0px;
+			top:0px;
+			opacity: 0.6;
+			transform-origin:center center -100px;
+		}
+		.box div:nth-of-type(1){
+			background-color: red;
+			transform:rotateY(0deg);
+		}
+		.box div:nth-of-type(2){
+			background-color: purple;
+			transform:rotateY(90deg);
+		}
+		.box div:nth-of-type(3){
+			background-color: green;
+			transform:rotateY(-90deg);
+		}
+		.box div:nth-of-type(4){
+			background-color: blue;
+			transform:rotateX(90deg);
+		}
+		.box div:nth-of-type(5){
+			background-color: orange;
+			transform:rotateX(-90deg);
+		}
+		.box div:nth-of-type(6){
+			background-color: pink;
+			transform: rotateY(-180deg)
+		}
+		@keyframes rotate {
+			1%{
+				transform: rotateY(0deg);
+			}
+			50%{
+				transform: rotateY(-720deg);
+			}
+			51%{
+				transform:rotateX(0deg);
+			}
+			100%{
+				transform:rotateX(-720deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+	</div>
+</body>
+</html>
